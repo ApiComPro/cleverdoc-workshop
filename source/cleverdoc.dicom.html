@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>cleverdoc.dicom package &#8212; CleverDoc  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/cleverdoc.dicom';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CleverDoc  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">QickStart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/source/cleverdoc.dicom.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>cleverdoc.dicom package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom.BaseDicom">cleverdoc.dicom.BaseDicom module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom"><code class="docutils literal notranslate"><span class="pre">BaseDicom</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.get_s3_creds"><code class="docutils literal notranslate"><span class="pre">BaseDicom.get_s3_creds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.readMaxBytes"><code class="docutils literal notranslate"><span class="pre">BaseDicom.readMaxBytes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.read_dicom"><code class="docutils literal notranslate"><span class="pre">BaseDicom.read_dicom()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.setReadMaxBytes"><code class="docutils literal notranslate"><span class="pre">BaseDicom.setReadMaxBytes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom.DicomDrawBoxes">cleverdoc.dicom.DicomDrawBoxes module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner"><code class="docutils literal notranslate"><span class="pre">DicomCleaner</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.OVERLAY_TAG"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.OVERLAY_TAG</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.clean()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean_frame"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.clean_frame()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.number_of_frames"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.number_of_frames()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.open"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.open()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.save_dicom"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.save_dicom()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.aggCols"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.aggCols</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.blackList"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.blackList</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.clean_tag_name"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.clean_tag_name()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.compression"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.compression</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.forceCompress"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.forceCompress</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.get_tags"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.get_tags()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.removePrivateTags"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.removePrivateTags</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.scaleFactor"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.scaleFactor</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setAggCols"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setAggCols()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setCompression"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setCompression()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setForceCompress"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setForceCompress()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setScaleFactor"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setScaleFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.transform_dicom"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.transform_dicom()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.NoImage"><code class="docutils literal notranslate"><span class="pre">NoImage</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.write_dataset_to_bytes"><code class="docutils literal notranslate"><span class="pre">write_dataset_to_bytes()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom.DicomToImage">cleverdoc.dicom.DicomToImage module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage"><code class="docutils literal notranslate"><span class="pre">DicomToImage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.add_image"><code class="docutils literal notranslate"><span class="pre">DicomToImage.add_image()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.frameLimit"><code class="docutils literal notranslate"><span class="pre">DicomToImage.frameLimit</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.get_input_col"><code class="docutils literal notranslate"><span class="pre">DicomToImage.get_input_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.metadataCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.metadataCol</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.pageNumCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.pageNumCol</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.scale"><code class="docutils literal notranslate"><span class="pre">DicomToImage.scale</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setFrameLimit"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setFrameLimit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setInputCols"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setInputCols()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setMetadataCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setMetadataCol()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setOutputCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setOutputCol()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setPageNumCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setPageNumCol()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setScale"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setScale()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.transform_dicom"><code class="docutils literal notranslate"><span class="pre">DicomToImage.transform_dicom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cleverdoc-dicom-package">
+<h1>cleverdoc.dicom package<a class="headerlink" href="#cleverdoc-dicom-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-cleverdoc.dicom.BaseDicom">
+<span id="cleverdoc-dicom-basedicom-module"></span><h2>cleverdoc.dicom.BaseDicom module<a class="headerlink" href="#module-cleverdoc.dicom.BaseDicom" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.dicom.BaseDicom.BaseDicom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.dicom.BaseDicom.</span></span><span class="sig-name descname"><span class="pre">BaseDicom</span></span><a class="headerlink" href="#cleverdoc.dicom.BaseDicom.BaseDicom" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.BaseDicom.BaseDicom.get_s3_creds">
+<span class="sig-name descname"><span class="pre">get_s3_creds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_ctx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.BaseDicom.BaseDicom.get_s3_creds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.BaseDicom.BaseDicom.readMaxBytes">
+<span class="sig-name descname"><span class="pre">readMaxBytes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='readMaxBytes',</span> <span class="pre">doc='readMaxBytes.')</span></em><a class="headerlink" href="#cleverdoc.dicom.BaseDicom.BaseDicom.readMaxBytes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.BaseDicom.BaseDicom.read_dicom">
+<span class="sig-name descname"><span class="pre">read_dicom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dicom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_before_pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.BaseDicom.BaseDicom.read_dicom" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.BaseDicom.BaseDicom.setReadMaxBytes">
+<span class="sig-name descname"><span class="pre">setReadMaxBytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.BaseDicom.BaseDicom.setReadMaxBytes" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.BaseDicom.BaseDicom.readMaxBytes" title="cleverdoc.dicom.BaseDicom.BaseDicom.readMaxBytes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">readMaxBytes</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cleverdoc.dicom.DicomDrawBoxes">
+<span id="cleverdoc-dicom-dicomdrawboxes-module"></span><h2>cleverdoc.dicom.DicomDrawBoxes module<a class="headerlink" href="#module-cleverdoc.dicom.DicomDrawBoxes" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.dicom.DicomDrawBoxes.</span></span><span class="sig-name descname"><span class="pre">DicomCleaner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forceCompress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">removePrivateTags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.OVERLAY_TAG">
+<span class="sig-name descname"><span class="pre">OVERLAY_TAG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24576</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.OVERLAY_TAG" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fix_interpretation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_data_attribute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'PixelData'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean_frame">
+<span class="sig-name descname"><span class="pre">clean_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dicom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean_frame" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.number_of_frames">
+<span class="sig-name descname"><span class="pre">number_of_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.number_of_frames" title="Link to this definition">#</a></dt>
+<dd><p>int: Number of frames</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dicom_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaleFactor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.open" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.save_dicom">
+<span class="sig-name descname"><span class="pre">save_dicom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.save_dicom" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.dicom.DicomDrawBoxes.</span></span><span class="sig-name descname"><span class="pre">DicomDrawBoxes</span></span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transformer</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCols" title="cleverdoc.params.HasInputCols"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasInputCols</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol" title="cleverdoc.params.HasOutputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasOutputCol</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsReadable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsWritable</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput" title="cleverdoc.params.HasKeepInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasKeepInput</span></code></a></p>
+<p>Draw regions to dicom.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.aggCols">
+<span class="sig-name descname"><span class="pre">aggCols</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='aggCols',</span> <span class="pre">doc='agg</span> <span class="pre">column</span> <span class="pre">names.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.aggCols" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.blackList">
+<span class="sig-name descname"><span class="pre">blackList</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='blackList',</span> <span class="pre">doc='List</span> <span class="pre">of</span> <span class="pre">tags</span> <span class="pre">for</span> <span class="pre">clear.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.blackList" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.clean_tag_name">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clean_tag_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.clean_tag_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.compression">
+<span class="sig-name descname"><span class="pre">compression</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='compression',</span> <span class="pre">doc='Compression</span> <span class="pre">type.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.compression" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.forceCompress">
+<span class="sig-name descname"><span class="pre">forceCompress</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='forceCompress',</span> <span class="pre">doc='True</span> <span class="pre">-</span> <span class="pre">Force</span> <span class="pre">compress</span> <span class="pre">image.</span> <span class="pre">False</span> <span class="pre">-</span> <span class="pre">compress</span> <span class="pre">only</span> <span class="pre">in</span> <span class="pre">case</span> <span class="pre">original</span> <span class="pre">image</span> <span class="pre">was</span> <span class="pre">compressed.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.forceCompress" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.get_tags">
+<span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.get_tags" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.removePrivateTags">
+<span class="sig-name descname"><span class="pre">removePrivateTags</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='removePrivateTags',</span> <span class="pre">doc='Remove</span> <span class="pre">private</span> <span class="pre">tags.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.removePrivateTags" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.scaleFactor">
+<span class="sig-name descname"><span class="pre">scaleFactor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='scaleFactor',</span> <span class="pre">doc='Scale</span> <span class="pre">factor.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.scaleFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setAggCols">
+<span class="sig-name descname"><span class="pre">setAggCols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setAggCols" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <code class="xref py py-attr docutils literal notranslate"><span class="pre">filledRect</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setCompression">
+<span class="sig-name descname"><span class="pre">setCompression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setCompression" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.compression" title="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.compression"><code class="xref py py-attr docutils literal notranslate"><span class="pre">compression</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setForceCompress">
+<span class="sig-name descname"><span class="pre">setForceCompress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setForceCompress" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.forceCompress" title="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.forceCompress"><code class="xref py py-attr docutils literal notranslate"><span class="pre">forceCompress</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setScaleFactor">
+<span class="sig-name descname"><span class="pre">setScaleFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setScaleFactor" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.scaleFactor" title="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.scaleFactor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scaleFactor</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.transform_dicom">
+<span class="sig-name descname"><span class="pre">transform_dicom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dicom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.transform_dicom" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.NoImage">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.dicom.DicomDrawBoxes.</span></span><span class="sig-name descname"><span class="pre">NoImage</span></span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.NoImage" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomDrawBoxes.write_dataset_to_bytes">
+<span class="sig-prename descclassname"><span class="pre">cleverdoc.dicom.DicomDrawBoxes.</span></span><span class="sig-name descname"><span class="pre">write_dataset_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomDrawBoxes.write_dataset_to_bytes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-cleverdoc.dicom.DicomToImage">
+<span id="cleverdoc-dicom-dicomtoimage-module"></span><h2>cleverdoc.dicom.DicomToImage module<a class="headerlink" href="#module-cleverdoc.dicom.DicomToImage" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.dicom.DicomToImage.</span></span><span class="sig-name descname"><span class="pre">DicomToImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transformer</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">HasInputCols</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">HasOutputCol</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput" title="cleverdoc.params.HasKeepInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasKeepInput</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOrigin" title="cleverdoc.params.HasOrigin"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasOrigin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">JavaMLReadable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">JavaMLWritable</span></code>, <a class="reference internal" href="#cleverdoc.dicom.BaseDicom.BaseDicom" title="cleverdoc.dicom.BaseDicom.BaseDicom"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDicom</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator" title="cleverdoc.license.LicenseValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LicenseValidator</span></code></a></p>
+<p>Transform Dicom Binary Content to the Image</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.add_image">
+<span class="sig-name descname"><span class="pre">add_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.add_image" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.frameLimit">
+<span class="sig-name descname"><span class="pre">frameLimit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='frameLimit',</span> <span class="pre">doc='Limit</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">frames</span> <span class="pre">for</span> <span class="pre">extraction.</span> <span class="pre">For</span> <span class="pre">extract</span> <span class="pre">all</span> <span class="pre">frames</span> <span class="pre">need</span> <span class="pre">to</span> <span class="pre">set</span> <span class="pre">this</span> <span class="pre">param</span> <span class="pre">to</span> <span class="pre">0.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.frameLimit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.get_input_col">
+<span class="sig-name descname"><span class="pre">get_input_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.get_input_col" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.metadataCol">
+<span class="sig-name descname"><span class="pre">metadataCol</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='metadataCol',</span> <span class="pre">doc='Output</span> <span class="pre">column</span> <span class="pre">name</span> <span class="pre">for</span> <span class="pre">dicom</span> <span class="pre">metatdata.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.metadataCol" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.pageNumCol">
+<span class="sig-name descname"><span class="pre">pageNumCol</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='pageNumCol',</span> <span class="pre">doc='Page</span> <span class="pre">number</span> <span class="pre">output</span> <span class="pre">column</span> <span class="pre">name.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.pageNumCol" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='scale',</span> <span class="pre">doc='Width</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">desired</span> <span class="pre">input</span> <span class="pre">image.</span> <span class="pre">Image</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">resized</span> <span class="pre">to</span> <span class="pre">this</span> <span class="pre">width.')</span></em><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.scale" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.setFrameLimit">
+<span class="sig-name descname"><span class="pre">setFrameLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setFrameLimit" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.DicomToImage.DicomToImage.frameLimit" title="cleverdoc.dicom.DicomToImage.DicomToImage.frameLimit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">frameLimit</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.setInputCols">
+<span class="sig-name descname"><span class="pre">setInputCols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setInputCols" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <code class="xref py py-attr docutils literal notranslate"><span class="pre">inputCol</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.setMetadataCol">
+<span class="sig-name descname"><span class="pre">setMetadataCol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setMetadataCol" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.DicomToImage.DicomToImage.metadataCol" title="cleverdoc.dicom.DicomToImage.DicomToImage.metadataCol"><code class="xref py py-attr docutils literal notranslate"><span class="pre">metadataCol</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.setOutputCol">
+<span class="sig-name descname"><span class="pre">setOutputCol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setOutputCol" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <code class="xref py py-attr docutils literal notranslate"><span class="pre">outputCol</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.setPageNumCol">
+<span class="sig-name descname"><span class="pre">setPageNumCol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setPageNumCol" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.dicom.DicomToImage.DicomToImage.pageNumCol" title="cleverdoc.dicom.DicomToImage.DicomToImage.pageNumCol"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pageNumCol</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.setScale">
+<span class="sig-name descname"><span class="pre">setScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setScale" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <code class="xref py py-attr docutils literal notranslate"><span class="pre">inputCol</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.dicom.DicomToImage.DicomToImage.transform_dicom">
+<span class="sig-name descname"><span class="pre">transform_dicom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dicom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.dicom.DicomToImage.DicomToImage.transform_dicom" title="Link to this definition">#</a></dt>
+<dd><p>Extract frames(images) from the dicom file</p>
+<p>&#64;param origin: Path to the file (generated by the binaryFile spark datasource)
+&#64;param parts: List of the frames for extract
+&#64;param dicom: Binary data or path to the local file
+&#64;return: Rows with image, exception and number of frame for each item</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cleverdoc.dicom">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cleverdoc.dicom" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom.BaseDicom">cleverdoc.dicom.BaseDicom module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom"><code class="docutils literal notranslate"><span class="pre">BaseDicom</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.get_s3_creds"><code class="docutils literal notranslate"><span class="pre">BaseDicom.get_s3_creds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.readMaxBytes"><code class="docutils literal notranslate"><span class="pre">BaseDicom.readMaxBytes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.read_dicom"><code class="docutils literal notranslate"><span class="pre">BaseDicom.read_dicom()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.BaseDicom.BaseDicom.setReadMaxBytes"><code class="docutils literal notranslate"><span class="pre">BaseDicom.setReadMaxBytes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom.DicomDrawBoxes">cleverdoc.dicom.DicomDrawBoxes module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner"><code class="docutils literal notranslate"><span class="pre">DicomCleaner</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.OVERLAY_TAG"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.OVERLAY_TAG</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.clean()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.clean_frame"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.clean_frame()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.number_of_frames"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.number_of_frames()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.open"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.open()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomCleaner.save_dicom"><code class="docutils literal notranslate"><span class="pre">DicomCleaner.save_dicom()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.aggCols"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.aggCols</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.blackList"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.blackList</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.clean_tag_name"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.clean_tag_name()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.compression"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.compression</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.forceCompress"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.forceCompress</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.get_tags"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.get_tags()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.removePrivateTags"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.removePrivateTags</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.scaleFactor"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.scaleFactor</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setAggCols"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setAggCols()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setCompression"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setCompression()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setForceCompress"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setForceCompress()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.setScaleFactor"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.setScaleFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.DicomDrawBoxes.transform_dicom"><code class="docutils literal notranslate"><span class="pre">DicomDrawBoxes.transform_dicom()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.NoImage"><code class="docutils literal notranslate"><span class="pre">NoImage</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomDrawBoxes.write_dataset_to_bytes"><code class="docutils literal notranslate"><span class="pre">write_dataset_to_bytes()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom.DicomToImage">cleverdoc.dicom.DicomToImage module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage"><code class="docutils literal notranslate"><span class="pre">DicomToImage</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.add_image"><code class="docutils literal notranslate"><span class="pre">DicomToImage.add_image()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.frameLimit"><code class="docutils literal notranslate"><span class="pre">DicomToImage.frameLimit</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.get_input_col"><code class="docutils literal notranslate"><span class="pre">DicomToImage.get_input_col()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.metadataCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.metadataCol</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.pageNumCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.pageNumCol</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.scale"><code class="docutils literal notranslate"><span class="pre">DicomToImage.scale</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setFrameLimit"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setFrameLimit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setInputCols"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setInputCols()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setMetadataCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setMetadataCol()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setOutputCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setOutputCol()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setPageNumCol"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setPageNumCol()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.setScale"><code class="docutils literal notranslate"><span class="pre">DicomToImage.setScale()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.dicom.DicomToImage.DicomToImage.transform_dicom"><code class="docutils literal notranslate"><span class="pre">DicomToImage.transform_dicom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.dicom">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ApicomPro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, ApicomPro.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

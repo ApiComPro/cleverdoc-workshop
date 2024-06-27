@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>cleverdoc.models.ner package &#8212; CleverDoc  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/cleverdoc.models.ner';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CleverDoc  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">QickStart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/source/cleverdoc.models.ner.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>cleverdoc.models.ner package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.Ner">cleverdoc.models.ner.Ner module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner"><code class="docutils literal notranslate"><span class="pre">Ner</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.aggregate_ner_results"><code class="docutils literal notranslate"><span class="pre">Ner.aggregate_ner_results()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.batchSize"><code class="docutils literal notranslate"><span class="pre">Ner.batchSize</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.device"><code class="docutils literal notranslate"><span class="pre">Ner.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.getDevice"><code class="docutils literal notranslate"><span class="pre">Ner.getDevice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.getModel"><code class="docutils literal notranslate"><span class="pre">Ner.getModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.getThreshold"><code class="docutils literal notranslate"><span class="pre">Ner.getThreshold()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.get_pipeline"><code class="docutils literal notranslate"><span class="pre">Ner.get_pipeline()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.model"><code class="docutils literal notranslate"><span class="pre">Ner.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setBatchSize"><code class="docutils literal notranslate"><span class="pre">Ner.setBatchSize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setDevice"><code class="docutils literal notranslate"><span class="pre">Ner.setDevice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setModel"><code class="docutils literal notranslate"><span class="pre">Ner.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setThreshold"><code class="docutils literal notranslate"><span class="pre">Ner.setThreshold()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.split_text"><code class="docutils literal notranslate"><span class="pre">Ner.split_text()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.threshold"><code class="docutils literal notranslate"><span class="pre">Ner.threshold</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.transform_local"><code class="docutils literal notranslate"><span class="pre">Ner.transform_local()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.transform_udf"><code class="docutils literal notranslate"><span class="pre">Ner.transform_udf()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.transform_udf_pandas"><code class="docutils literal notranslate"><span class="pre">Ner.transform_udf_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.log_info"><code class="docutils literal notranslate"><span class="pre">log_info()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.NerLLM">cleverdoc.models.ner.NerLLM module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM"><code class="docutils literal notranslate"><span class="pre">NerLLM</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.getModel"><code class="docutils literal notranslate"><span class="pre">NerLLM.getModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.model"><code class="docutils literal notranslate"><span class="pre">NerLLM.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.setModel"><code class="docutils literal notranslate"><span class="pre">NerLLM.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.transform_local"><code class="docutils literal notranslate"><span class="pre">NerLLM.transform_local()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.transform_udf"><code class="docutils literal notranslate"><span class="pre">NerLLM.transform_udf()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.NerMerger">cleverdoc.models.ner.NerMerger module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerMerger.NerMerger"><code class="docutils literal notranslate"><span class="pre">NerMerger</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.StringToKeyValue">cleverdoc.models.ner.StringToKeyValue module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.getModel"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.getModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.setModel"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_local"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.transform_local()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_udf"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.transform_udf()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cleverdoc-models-ner-package">
+<h1>cleverdoc.models.ner package<a class="headerlink" href="#cleverdoc-models-ner-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-cleverdoc.models.ner.Ner">
+<span id="cleverdoc-models-ner-ner-module"></span><h2>cleverdoc.models.ner.Ner module<a class="headerlink" href="#module-cleverdoc.models.ner.Ner" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.models.ner.Ner.</span></span><span class="sig-name descname"><span class="pre">Ner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transformer</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol" title="cleverdoc.params.HasInputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasInputCol</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol" title="cleverdoc.params.HasOutputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasOutputCol</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput" title="cleverdoc.params.HasKeepInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasKeepInput</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList" title="cleverdoc.params.HasWhiteList"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasWhiteList</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsReadable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsWritable</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasNumPartitions" title="cleverdoc.params.HasNumPartitions"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasNumPartitions</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator" title="cleverdoc.license.LicenseValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LicenseValidator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.aggregate_ner_results">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aggregate_ner_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.aggregate_ner_results" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.batchSize">
+<span class="sig-name descname"><span class="pre">batchSize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='batchSize',</span> <span class="pre">doc='batchSize.')</span></em><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.batchSize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.device">
+<span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='device',</span> <span class="pre">doc='Device.')</span></em><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.device" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.getDevice">
+<span class="sig-name descname"><span class="pre">getDevice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.getDevice" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.Ner.Ner.device" title="cleverdoc.models.ner.Ner.Ner.device"><code class="xref py py-attr docutils literal notranslate"><span class="pre">device</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.getModel">
+<span class="sig-name descname"><span class="pre">getModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.getModel" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.Ner.Ner.model" title="cleverdoc.models.ner.Ner.Ner.model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.getThreshold">
+<span class="sig-name descname"><span class="pre">getThreshold</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.getThreshold" title="Link to this definition">#</a></dt>
+<dd><p>Gets the value of threshold or its default value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.get_pipeline">
+<span class="sig-name descname"><span class="pre">get_pipeline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.get_pipeline" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='model',</span> <span class="pre">doc='Model</span> <span class="pre">name.')</span></em><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.setBatchSize">
+<span class="sig-name descname"><span class="pre">setBatchSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.setBatchSize" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.Ner.Ner.batchSize" title="cleverdoc.models.ner.Ner.Ner.batchSize"><code class="xref py py-attr docutils literal notranslate"><span class="pre">batchSize</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.setDevice">
+<span class="sig-name descname"><span class="pre">setDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.setDevice" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.Ner.Ner.device" title="cleverdoc.models.ner.Ner.Ner.device"><code class="xref py py-attr docutils literal notranslate"><span class="pre">device</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.setModel">
+<span class="sig-name descname"><span class="pre">setModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.setModel" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.Ner.Ner.model" title="cleverdoc.models.ner.Ner.Ner.model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.setThreshold">
+<span class="sig-name descname"><span class="pre">setThreshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.setThreshold" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.Ner.Ner.threshold" title="cleverdoc.models.ner.Ner.Ner.threshold"><code class="xref py py-attr docutils literal notranslate"><span class="pre">threshold</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.split_text">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">split_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.split_text" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.threshold">
+<span class="sig-name descname"><span class="pre">threshold</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='threshold',</span> <span class="pre">doc='Device.')</span></em><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.threshold" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.transform_local">
+<span class="sig-name descname"><span class="pre">transform_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.transform_local" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.transform_udf">
+<span class="sig-name descname"><span class="pre">transform_udf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.transform_udf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.Ner.transform_udf_pandas">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transform_udf_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">texts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#cleverdoc.models.ner.Ner.Ner.transform_udf_pandas" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.Ner.log_info">
+<span class="sig-prename descclassname"><span class="pre">cleverdoc.models.ner.Ner.</span></span><span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.Ner.log_info" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-cleverdoc.models.ner.NerLLM">
+<span id="cleverdoc-models-ner-nerllm-module"></span><h2>cleverdoc.models.ner.NerLLM module<a class="headerlink" href="#module-cleverdoc.models.ner.NerLLM" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerLLM.NerLLM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.models.ner.NerLLM.</span></span><span class="sig-name descname"><span class="pre">NerLLM</span></span><a class="headerlink" href="#cleverdoc.models.ner.NerLLM.NerLLM" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transformer</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol" title="cleverdoc.params.HasInputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasInputCol</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol" title="cleverdoc.params.HasOutputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasOutputCol</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput" title="cleverdoc.params.HasKeepInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasKeepInput</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList" title="cleverdoc.params.HasWhiteList"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasWhiteList</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsReadable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsWritable</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerLLM.NerLLM.getModel">
+<span class="sig-name descname"><span class="pre">getModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.NerLLM.NerLLM.getModel" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.NerLLM.NerLLM.model" title="cleverdoc.models.ner.NerLLM.NerLLM.model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerLLM.NerLLM.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='model',</span> <span class="pre">doc='Model</span> <span class="pre">name.')</span></em><a class="headerlink" href="#cleverdoc.models.ner.NerLLM.NerLLM.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerLLM.NerLLM.setModel">
+<span class="sig-name descname"><span class="pre">setModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.NerLLM.NerLLM.setModel" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.NerLLM.NerLLM.model" title="cleverdoc.models.ner.NerLLM.NerLLM.model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerLLM.NerLLM.transform_local">
+<span class="sig-name descname"><span class="pre">transform_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.NerLLM.NerLLM.transform_local" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerLLM.NerLLM.transform_udf">
+<span class="sig-name descname"><span class="pre">transform_udf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.NerLLM.NerLLM.transform_udf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cleverdoc.models.ner.NerMerger">
+<span id="cleverdoc-models-ner-nermerger-module"></span><h2>cleverdoc.models.ner.NerMerger module<a class="headerlink" href="#module-cleverdoc.models.ner.NerMerger" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.NerMerger.NerMerger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.models.ner.NerMerger.</span></span><span class="sig-name descname"><span class="pre">NerMerger</span></span><a class="headerlink" href="#cleverdoc.models.ner.NerMerger.NerMerger" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transformer</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsReadable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsWritable</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCols" title="cleverdoc.params.HasInputCols"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasInputCols</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol" title="cleverdoc.params.HasOutputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasOutputCol</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-cleverdoc.models.ner.StringToKeyValue">
+<span id="cleverdoc-models-ner-stringtokeyvalue-module"></span><h2>cleverdoc.models.ner.StringToKeyValue module<a class="headerlink" href="#module-cleverdoc.models.ner.StringToKeyValue" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cleverdoc.models.ner.StringToKeyValue.</span></span><span class="sig-name descname"><span class="pre">StringToKeyValue</span></span><a class="headerlink" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Transformer</span></code>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol" title="cleverdoc.params.HasInputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasInputCol</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol" title="cleverdoc.params.HasOutputCol"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasOutputCol</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput" title="cleverdoc.params.HasKeepInput"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasKeepInput</span></code></a>, <a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList" title="cleverdoc.params.HasWhiteList"><code class="xref py py-class docutils literal notranslate"><span class="pre">HasWhiteList</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsReadable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultParamsWritable</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.getModel">
+<span class="sig-name descname"><span class="pre">getModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.getModel" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model" title="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Param(parent='undefined',</span> <span class="pre">name='model',</span> <span class="pre">doc='Model</span> <span class="pre">name.')</span></em><a class="headerlink" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.setModel">
+<span class="sig-name descname"><span class="pre">setModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.setModel" title="Link to this definition">#</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model" title="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_local">
+<span class="sig-name descname"><span class="pre">transform_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_local" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_udf">
+<span class="sig-name descname"><span class="pre">transform_udf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_udf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cleverdoc.models.ner">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cleverdoc.models.ner" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.Ner">cleverdoc.models.ner.Ner module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner"><code class="docutils literal notranslate"><span class="pre">Ner</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.aggregate_ner_results"><code class="docutils literal notranslate"><span class="pre">Ner.aggregate_ner_results()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.batchSize"><code class="docutils literal notranslate"><span class="pre">Ner.batchSize</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.device"><code class="docutils literal notranslate"><span class="pre">Ner.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.getDevice"><code class="docutils literal notranslate"><span class="pre">Ner.getDevice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.getModel"><code class="docutils literal notranslate"><span class="pre">Ner.getModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.getThreshold"><code class="docutils literal notranslate"><span class="pre">Ner.getThreshold()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.get_pipeline"><code class="docutils literal notranslate"><span class="pre">Ner.get_pipeline()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.model"><code class="docutils literal notranslate"><span class="pre">Ner.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setBatchSize"><code class="docutils literal notranslate"><span class="pre">Ner.setBatchSize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setDevice"><code class="docutils literal notranslate"><span class="pre">Ner.setDevice()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setModel"><code class="docutils literal notranslate"><span class="pre">Ner.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.setThreshold"><code class="docutils literal notranslate"><span class="pre">Ner.setThreshold()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.split_text"><code class="docutils literal notranslate"><span class="pre">Ner.split_text()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.threshold"><code class="docutils literal notranslate"><span class="pre">Ner.threshold</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.transform_local"><code class="docutils literal notranslate"><span class="pre">Ner.transform_local()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.transform_udf"><code class="docutils literal notranslate"><span class="pre">Ner.transform_udf()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.Ner.transform_udf_pandas"><code class="docutils literal notranslate"><span class="pre">Ner.transform_udf_pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.Ner.log_info"><code class="docutils literal notranslate"><span class="pre">log_info()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.NerLLM">cleverdoc.models.ner.NerLLM module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM"><code class="docutils literal notranslate"><span class="pre">NerLLM</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.getModel"><code class="docutils literal notranslate"><span class="pre">NerLLM.getModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.model"><code class="docutils literal notranslate"><span class="pre">NerLLM.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.setModel"><code class="docutils literal notranslate"><span class="pre">NerLLM.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.transform_local"><code class="docutils literal notranslate"><span class="pre">NerLLM.transform_local()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerLLM.NerLLM.transform_udf"><code class="docutils literal notranslate"><span class="pre">NerLLM.transform_udf()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.NerMerger">cleverdoc.models.ner.NerMerger module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.NerMerger.NerMerger"><code class="docutils literal notranslate"><span class="pre">NerMerger</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner.StringToKeyValue">cleverdoc.models.ner.StringToKeyValue module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.getModel"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.getModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.model"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.setModel"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.setModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_local"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.transform_local()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cleverdoc.models.ner.StringToKeyValue.StringToKeyValue.transform_udf"><code class="docutils literal notranslate"><span class="pre">StringToKeyValue.transform_udf()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-cleverdoc.models.ner">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ApicomPro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, ApicomPro.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

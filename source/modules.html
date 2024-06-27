@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>cleverdoc &#8212; CleverDoc  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/modules';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CleverDoc  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">QickStart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release Notes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/source/modules.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>cleverdoc</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cleverdoc">
+<h1>cleverdoc<a class="headerlink" href="#cleverdoc" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cleverdoc.html">cleverdoc package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cleverdoc.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.dicom.html">cleverdoc.dicom package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.dicom.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.dicom.html#module-cleverdoc.dicom.BaseDicom">cleverdoc.dicom.BaseDicom module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.dicom.html#module-cleverdoc.dicom.DicomDrawBoxes">cleverdoc.dicom.DicomDrawBoxes module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.dicom.html#module-cleverdoc.dicom.DicomToImage">cleverdoc.dicom.DicomToImage module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.dicom.html#module-cleverdoc.dicom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.doc.html">cleverdoc.doc package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.doc.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.doc.html#cleverdoc-doc-doctoimage-module">cleverdoc.doc.DocToImage module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.doc.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.image.html">cleverdoc.image package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.image.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.image.html#module-cleverdoc.image.BinaryToImage">cleverdoc.image.BinaryToImage module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.image.html#module-cleverdoc.image.ImageDrawBoxes">cleverdoc.image.ImageDrawBoxes module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.image.html#module-cleverdoc.image">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.models.html">cleverdoc.models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.models.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.models.html#module-cleverdoc.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.pdf.html">cleverdoc.pdf package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pdf.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pdf.html#module-cleverdoc.pdf.ImageToPdf">cleverdoc.pdf.ImageToPdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pdf.html#module-cleverdoc.pdf.PdfAssembler">cleverdoc.pdf.PdfAssembler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pdf.html#module-cleverdoc.pdf.PdfToImage">cleverdoc.pdf.PdfToImage module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pdf.html#module-cleverdoc.pdf.SingleImageToPdf">cleverdoc.pdf.SingleImageToPdf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pdf.html#module-cleverdoc.pdf">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.pipeline.html">cleverdoc.pipeline package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pipeline.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pipeline.html#cleverdoc-pipeline-localpipeline-module">cleverdoc.pipeline.LocalPipeline module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.pipeline.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.schemas.html">cleverdoc.schemas package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.Box">cleverdoc.schemas.Box module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.Dicom">cleverdoc.schemas.Dicom module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.Entity">cleverdoc.schemas.Entity module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.Image">cleverdoc.schemas.Image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.NerOutput">cleverdoc.schemas.NerOutput module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.OcrOutput">cleverdoc.schemas.OcrOutput module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas.PdfDocument">cleverdoc.schemas.PdfDocument module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.schemas.html#module-cleverdoc.schemas">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.utils.html">cleverdoc.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.utils.html#module-cleverdoc.utils.auxiliary">cleverdoc.utils.auxiliary module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.utils.html#module-cleverdoc.utils.dataclass">cleverdoc.utils.dataclass module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.utils.html#module-cleverdoc.utils.display_utils">cleverdoc.utils.display_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.utils.html#module-cleverdoc.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleverdoc.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cleverdoc.html#cleverdoc-enums-module">cleverdoc.enums module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cleverdoc.html#module-cleverdoc.license">cleverdoc.license module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator"><code class="docutils literal notranslate"><span class="pre">LicenseValidator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator.ENV_VAR_NAME"><code class="docutils literal notranslate"><span class="pre">LicenseValidator.ENV_VAR_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator.PUBLIC_KEY"><code class="docutils literal notranslate"><span class="pre">LicenseValidator.PUBLIC_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator.SUPPORT_EMAIL"><code class="docutils literal notranslate"><span class="pre">LicenseValidator.SUPPORT_EMAIL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.license.LicenseValidator.check_license"><code class="docutils literal notranslate"><span class="pre">LicenseValidator.check_license()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.license.Singleton"><code class="docutils literal notranslate"><span class="pre">Singleton</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleverdoc.html#module-cleverdoc.params">cleverdoc.params module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasColor"><code class="docutils literal notranslate"><span class="pre">HasColor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasColor.color"><code class="docutils literal notranslate"><span class="pre">HasColor.color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasColor.getColor"><code class="docutils literal notranslate"><span class="pre">HasColor.getColor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasColor.setColor"><code class="docutils literal notranslate"><span class="pre">HasColor.setColor()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasImageType"><code class="docutils literal notranslate"><span class="pre">HasImageType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasImageType.getImageType"><code class="docutils literal notranslate"><span class="pre">HasImageType.getImageType()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasImageType.imageType"><code class="docutils literal notranslate"><span class="pre">HasImageType.imageType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasImageType.setImageType"><code class="docutils literal notranslate"><span class="pre">HasImageType.setImageType()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol"><code class="docutils literal notranslate"><span class="pre">HasInputCol</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol.getInputCol"><code class="docutils literal notranslate"><span class="pre">HasInputCol.getInputCol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol.inputCol"><code class="docutils literal notranslate"><span class="pre">HasInputCol.inputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCol.setInputCol"><code class="docutils literal notranslate"><span class="pre">HasInputCol.setInputCol()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCols"><code class="docutils literal notranslate"><span class="pre">HasInputCols</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCols.getInputCols"><code class="docutils literal notranslate"><span class="pre">HasInputCols.getInputCols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCols.inputCols"><code class="docutils literal notranslate"><span class="pre">HasInputCols.inputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasInputCols.setInputCols"><code class="docutils literal notranslate"><span class="pre">HasInputCols.setInputCols()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput"><code class="docutils literal notranslate"><span class="pre">HasKeepInput</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput.getKeepInput"><code class="docutils literal notranslate"><span class="pre">HasKeepInput.getKeepInput()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput.keepInput"><code class="docutils literal notranslate"><span class="pre">HasKeepInput.keepInput</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasKeepInput.setKeepInput"><code class="docutils literal notranslate"><span class="pre">HasKeepInput.setKeepInput()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasNumPartitions"><code class="docutils literal notranslate"><span class="pre">HasNumPartitions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasNumPartitions.getNumPartitions"><code class="docutils literal notranslate"><span class="pre">HasNumPartitions.getNumPartitions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasNumPartitions.numPartitions"><code class="docutils literal notranslate"><span class="pre">HasNumPartitions.numPartitions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasNumPartitions.setNumPartitions"><code class="docutils literal notranslate"><span class="pre">HasNumPartitions.setNumPartitions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOrigin"><code class="docutils literal notranslate"><span class="pre">HasOrigin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOrigin.getOriginCol"><code class="docutils literal notranslate"><span class="pre">HasOrigin.getOriginCol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOrigin.originCol"><code class="docutils literal notranslate"><span class="pre">HasOrigin.originCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOrigin.setOriginCol"><code class="docutils literal notranslate"><span class="pre">HasOrigin.setOriginCol()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol"><code class="docutils literal notranslate"><span class="pre">HasOutputCol</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol.getOutputCol"><code class="docutils literal notranslate"><span class="pre">HasOutputCol.getOutputCol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol.outputCol"><code class="docutils literal notranslate"><span class="pre">HasOutputCol.outputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasOutputCol.setOutputCol"><code class="docutils literal notranslate"><span class="pre">HasOutputCol.setOutputCol()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasResolution"><code class="docutils literal notranslate"><span class="pre">HasResolution</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasResolution.POINTS_PER_INCH"><code class="docutils literal notranslate"><span class="pre">HasResolution.POINTS_PER_INCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasResolution.getResolution"><code class="docutils literal notranslate"><span class="pre">HasResolution.getResolution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasResolution.resolution"><code class="docutils literal notranslate"><span class="pre">HasResolution.resolution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasResolution.setResolution"><code class="docutils literal notranslate"><span class="pre">HasResolution.setResolution()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList"><code class="docutils literal notranslate"><span class="pre">HasWhiteList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList.getWhiteList"><code class="docutils literal notranslate"><span class="pre">HasWhiteList.getWhiteList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList.setWhiteList"><code class="docutils literal notranslate"><span class="pre">HasWhiteList.setWhiteList()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleverdoc.html#cleverdoc.params.HasWhiteList.whiteList"><code class="docutils literal notranslate"><span class="pre">HasWhiteList.whiteList</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleverdoc.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ApicomPro
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, ApicomPro.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
